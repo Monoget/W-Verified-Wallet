@@ -1,0 +1,9 @@
+RewriteEngine on
+
+RewriteRule ^Home index.html [NC,L]
+
+RewriteRule ^Verify verify.php [NC,L]
+
+RewriteRule ^List list.php [NC,L]
+
+RewriteRule ^Email email.php [NC,L]

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Verified Wallet Check</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet"/>
+
+</head>
+<body>
+
+<div class="container">
+    <form action="Verify" method="post">
+        <div class="row mt-5">
+            <div class="col-12">
+                <h1 class="text-info mb-3">Please Provide NFT wallet address here to verify your and claim</h1>
+            </div>
+            <div class="col-12">
+                <div class="mb-3">
+                    <label for="wallet_address" class="form-label">NFT Wallet Address</label>
+                    <input type="text" class="form-control" id="wallet_address" name="wallet_address"
+                           placeholder="0x0000000000000000000000000000000000000000">
+                </div>
+            </div>
+            <div class="col-12">
+                <div class="mb-3 text-center">
+                    <button type="button" class="btn btn-primary btn-lg">Verify Wallet</button>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+
+<!-- Bootstrap JS -->
+<script src="assets/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
