@@ -4,15 +4,15 @@ class DBController {
     private $user = "root";
     private $password = "";
     private $database = "wallet_verify";
-    private $from_email= "";
+    private $from_email= "noreply@verify.nfthulk.net";
     private $conn;
 
     function __construct() {
-        if($_SERVER['SERVER_NAME']=="nybanglapost.com"||$_SERVER['SERVER_NAME']=="www.nybanglapost.com"){
-            $this->host = "localhost";
-            $this->user = "ugda6t7vlbg3u";
-            $this->password = "@gbz2et_gf$@";
-            $this->database = "dbn6jp0qc1bhev";
+        if($_SERVER['SERVER_NAME']=="verify.nfthulk.net"||$_SERVER['SERVER_NAME']=="www.verify.nfthulk.net"){
+            $this->host = "premium11";
+            $this->user = "biplgmwr_verify";
+            $this->password = "n4p]}}{u(fA1";
+            $this->database = "biplgmwr_verify";
         }
 
         $this->conn = $this->connectDB();

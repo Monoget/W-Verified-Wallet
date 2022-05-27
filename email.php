@@ -4,11 +4,11 @@ if (isset($_POST['submit'])) {
     require_once("includes/dbConnect.php");
     $db_handle = new DBController();
 
-    $name = $_POST['Name'];
+    $name = $db_handle->checkValue($_POST['Name']);
 
-    $phone = $_POST['Phone'];
+    $phone = $db_handle->checkValue($_POST['Phone']);
 
-    $address = $_POST['Address'];
+    $address = $db_handle->checkValue($_POST['Address']);
 
     $from_email = $db_handle->from_email();
 
