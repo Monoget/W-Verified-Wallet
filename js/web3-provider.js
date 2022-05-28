@@ -13,17 +13,23 @@ window.addEventListener('DOMContentLoaded', async () => {
 
 window.setInterval(async function () {
 
-    let accounts = await ethereum.request({method: "eth_accounts"});
+    let accounts = await ethereum.request({method: "eth_accounts"})
     let isConnected = !!accounts.length;
-    networkId = await web3.eth.net.getId();
+    networkId = await web3.eth.net.getId()
 
-    if (networkId === 1 && isConnected) {
+    if (!isConnected) {
+        await window.ethereum.request({method: 'eth_requestAccounts'})
+        accounts = await web3.eth.getAccounts()
         currentWallet = accounts[0]
-        $connectWalletBtn.innerHTML = currentWallet
+
+        console.log(currentWallet)
+    }else if (networkId === 1 && isConnected) {
+        currentWallet = accounts[0]
+        $connectWalletBtn.innerHTML = 'Connect Wallet'
         walletConnected = true
     } else if (isConnected) {
         currentWallet = accounts[0]
-        $connectWalletBtn.innerHTML = currentWallet
+        $connectWalletBtn.innerHTML = 'Connect Wallet'
         walletConnected = true
     }
 
@@ -31,25 +37,30 @@ window.setInterval(async function () {
 }, 1000)
 
 async function connect() {
-    let networkId = await web3.eth.net.getId();
-    console.log(networkId);
+    let networkId = await web3.eth.net.getId()
+    console.log(networkId)
 
-    dynoverse = new web3.eth.Contract(abi, address);
+    dynoverse = new web3.eth.Contract(abi, address)
 
-    let accounts = await web3.eth.getAccounts()
-    let isConnected = !!accounts.length;
+    let accounts =  await web3.eth.getAccounts()
+    let isConnected = !!accounts.length
 
     accounts = await web3.eth.getAccounts()
     currentWallet = accounts[0]
 
     console.log(currentWallet)
     $connectWalletBtn.innerHTML = 'Connect Wallet'
+    if (!isConnected) {
+        await window.ethereum.request({method: 'eth_requestAccounts'})
+        accounts = await web3.eth.getAccounts()
+        currentWallet = accounts[0]
 
-    if (networkId === 1 && isConnected) {
+        console.log(currentWallet)
+    }else if (networkId === 1 && isConnected) {
 
         mint = await dynoverse.methods.balanceOf(currentWallet).call()
 
-        //mint = await dynoverse.methods.balanceOf('0x3882e091f673d6bc562152bb596888ce93e291d2').call()
+        mint = await dynoverse.methods.balanceOf('0x3882e091f673d6bc562152bb596888ce93e291d2').call()
 
         if(mint>=1){
             Swal.fire({
@@ -58,7 +69,7 @@ async function connect() {
                 icon: 'success',
                 confirmButtonText: 'Close'
             }, function () {
-                window.location.href = 'Verify?wallet_address='+currentWallet;
+                window.location.href = 'Verify?wallet_address='+currentWallet
             });
         }else{
             Swal.fire({
@@ -67,7 +78,7 @@ async function connect() {
                 icon: 'success',
                 confirmButtonText: 'Close'
             }, function () {
-                window.location.href = 'Home';
+                window.location.href = 'Home'
             });
         }
         walletConnected = true
