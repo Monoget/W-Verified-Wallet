@@ -1,5 +1,5 @@
 <?php
-if($_POST['wallet_address']=="0xc85ECe92db84eCeE699954DB8717AbA03d5fA904"){
+if(isset($_GET['wallet_address'])){
 ?>
     <!DOCTYPE html>
     <html lang="en">

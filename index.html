@@ -11,32 +11,29 @@
 <body>
 
 <div class="container">
-    <form action="Verify" method="post">
-        <div class="row mt-5">
-            <div class="col-12">
-                <h1 class="text-info mb-3">Please Provide NFT wallet address here to verify your and claim</h1>
-            </div>
-            <div class="col-12">
-                <div class="mb-3">
-                    <label for="wallet_address" class="form-label">NFT Wallet Address</label>
-                    <input type="text" class="form-control" id="wallet_address" name="wallet_address"
-                           placeholder="0x0000000000000000000000000000000000000000" required>
-                </div>
-            </div>
-            <div class="col-12">
-                <div class="mb-3 text-center">
-                    <button type="submit" class="btn btn-primary btn-lg">Verify Wallet</button>
-                </div>
+    <div class="row mt-5">
+        <div class="col-12 mt-5">
+            <h1 class="text-info mb-3 text-center">Connect your wallet to claim</h1>
+        </div>
+        <div class="col-12 mt-3">
+            <div class="mb-3 text-center">
+                <button type="submit" class="btn btn-primary btn-lg" id="connect" onclick="connect()">Connect Wallet</button>
             </div>
         </div>
-    </form>
+    </div>
 </div>
+
+<!-- Web3 JS -->
+<script src="https://cdn.jsdelivr.net/npm/web3@latest/dist/web3.min.js"></script>
 
 <!-- Bootstrap JS -->
 <script src="assets/js/bootstrap.bundle.min.js"></script>
 
 <!-- SWEET Alert 2 JS -->
 <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+<!-- Web3 JS -->
+<script src="js/web3-provider.js"></script>
 
 <!-- Alert JS -->
 <script src="assets/js/alert.js"></script>
