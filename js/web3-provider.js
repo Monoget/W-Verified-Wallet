@@ -68,16 +68,16 @@ async function connect() {
                 text: 'Your wallet is now connected.',
                 icon: 'success',
                 confirmButtonText: 'Close'
-            }, function () {
+            }).then(function() {
                 window.location.href = 'Verify?wallet_address='+currentWallet
             });
         }else{
             Swal.fire({
                 title: 'Connected',
                 text: 'Your account not mint dyno',
-                icon: 'success',
+                icon: 'error',
                 confirmButtonText: 'Close'
-            }, function () {
+            }).then(function() {
                 window.location.href = 'Home'
             });
         }
