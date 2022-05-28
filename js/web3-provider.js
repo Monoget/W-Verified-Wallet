@@ -43,7 +43,7 @@ async function connect() {
     currentWallet = accounts[0]
 
     console.log(currentWallet)
-    $connectWalletBtn.innerHTML = currentWallet
+    $connectWalletBtn.innerHTML = 'Connect Wallet'
 
     if (networkId === 1 && isConnected) {
 
