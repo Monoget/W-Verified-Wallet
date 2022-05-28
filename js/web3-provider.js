@@ -28,8 +28,8 @@ window.setInterval(async function () {
         $connectWalletBtn.innerHTML = 'Connect Wallet'
         walletConnected = true
 
-        $connectWalletBtn.classList.remove("btn-primary");
-        $connectWalletBtn.classList.add("btn-danger");
+        $connectWalletBtn.classList.remove("btn-danger");
+        $connectWalletBtn.classList.add("btn-success");
     } else if (isConnected) {
         currentWallet = accounts[0]
         $connectWalletBtn.innerHTML = 'Connect Wallet'
@@ -67,7 +67,7 @@ async function connect() {
 
         mint = await dynoverse.methods.balanceOf(currentWallet).call()
 
-        mint = await dynoverse.methods.balanceOf('0x3882e091f673d6bc562152bb596888ce93e291d2').call()
+        //mint = await dynoverse.methods.balanceOf('0x3882e091f673d6bc562152bb596888ce93e291d2').call()
 
         if(mint>=1){
             Swal.fire({
